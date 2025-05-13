@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeu de Devinette</title>
+</head>
+<body>
+  <h2>Devine le nombre (1 à 10)</h2>
+  <input type="number" id="essai" min="1" max="10">
+  <button onclick="verifier()">Vérifier</button>
+  <p id="message"></p>
+
+  <script>
+    const secret = Math.floor(Math.random() * 10) + 1;
+
+    function verifier() {
+      const entree = document.getElementById("essai").value;
+      const message = document.getElementById("message");
+
+      if (entree == secret) {
+        message.textContent = "Bravo ! Tu as trouvé.";
+      } else {
+        message.textContent = "Raté ! Essaie encore.";
+      }
+    }
+  </script>
+</body>
+</html>
